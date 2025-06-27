@@ -16,6 +16,7 @@ class BookViewSet(viewsets.ModelViewSet):
 
 
 class OrderViewSet(viewsets.ModelViewSet):
+    queryset = Order.objects.all()  # ← ဒီလိုထည့်ဖို့လိုတယ်
     serializer_class = OrderSerializer
     permission_classes = [permissions.IsAuthenticated]
 
@@ -27,6 +28,7 @@ class OrderViewSet(viewsets.ModelViewSet):
 
 
 class OrderItemViewSet(viewsets.ModelViewSet):
+    queryset = OrderItem.objects.all()  # ← ဒီလိုတိတိထည့်ပေးလိုက်ပါ
     serializer_class = OrderItemSerializer
     permission_classes = [permissions.IsAuthenticated]
 
